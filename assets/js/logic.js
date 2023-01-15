@@ -10,7 +10,8 @@ let feedbackMsg = document.querySelector("#feedback");
 // TIMER 
 let timer = document.querySelector("#time");
 
-let timeLeft = 5;
+// time to complete quiz
+let timeLeft = 76;
 
 
 // WHEN START BTN IS CLICKED START TIMER AND PRESENT FIRST QUESTION

@@ -37,7 +37,8 @@ function renderQuestions() {
 
     // loop through the myQuestion array
     for (let i = 0; i < myQuestions.length; i++) {
-        // save the objects iteration in a variable
+        // create button elements for choices 
+        // and append to choices
         let choicesList = document.createElement("button");
         questionChoices.appendChild(choicesList);
 
@@ -46,13 +47,22 @@ function renderQuestions() {
 
         // add click eventListener to choices buttons
         choicesList.addEventListener("click", function (e) {
+            e.preventDefault();
             // validate each button
             // if btn is not equal to answer
+            if(choicesList.textContent !== currentQuestionsItem.answer) {
                 // return wrong msg
+                feedbackMsg.setAttribute("class", "feedback");
+                feedbackMsg.textContent = "Wrong!";
                 // decrement time -15
-            // else 
+                timeLeft -= 15;
+            } else {
                 // return correct msg
+                feedbackMsg.setAttribute("class", "feedback");
+                feedbackMsg.textContent = "Correct!";
                 // go to next question
+
+            }             
         });
 
         /* IGNORE
