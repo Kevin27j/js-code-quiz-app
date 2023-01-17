@@ -11,9 +11,9 @@ let myQuestions = [
         answer: "two"
     },
     {
-        question: "What number?",
-        choices: ["one", "two", "three"],
-        answer: "two"
+        question: "Lorem ipsum?",
+        choices: ["lorem", "ipsum", "planner"],
+        answer: "lorem"
     }
 
 ];
@@ -27,16 +27,15 @@ function renderQuestions() {
 
     // Create a variable for content of question title
     let questionTitle = questionsScreen.children[0];
+    // update question title <h2> with current question
+    questionTitle.textContent = currentQuestionsItem.question;
 
     // clear out any old questions in choice div
     let questionChoices = questionsScreen.children[1];
     questionChoices.textContent = "";
 
-    // update question title <h2> with current question
-    questionTitle.textContent = currentQuestionsItem.question;
-
     // loop through the myQuestion array
-    for (let i = 0; i < myQuestions.length; i++) {
+    for (let i = 0; i < currentQuestionsItem.choices.length; i++) {
         // create button elements for choices 
         // and append to choices
         let choicesList = document.createElement("button");
@@ -47,39 +46,31 @@ function renderQuestions() {
 
         // add click eventListener to choices buttons
         choicesList.addEventListener("click", function (e) {
-            e.preventDefault();
-            // validate each button
+            // check if the button choice is equal to the answer
+            if (choicesList.textContent === currentQuestionsItem.answer) {
+                // return correct msg
+                feedbackMsg.setAttribute("class", "feedback");
+                feedbackMsg.textContent = "Correct!";
+            }
             // if btn is not equal to answer
-            if(choicesList.textContent !== currentQuestionsItem.answer) {
+            else {
                 // return wrong msg
                 feedbackMsg.setAttribute("class", "feedback");
                 feedbackMsg.textContent = "Wrong!";
                 // decrement time -15
                 timeLeft -= 15;
-            } else {
-                // return correct msg
-                feedbackMsg.setAttribute("class", "feedback");
-                feedbackMsg.textContent = "Correct!";
-                // go to next question
+            }
 
-            }             
+            // go to next question when after button choice is clicked
+            if (myQuestionsIndex < myQuestions.length - 1) {
+                myQuestionsIndex++;
+                renderQuestions();
+            }
+            // if no more questions hide question screen div and show end-screen div
+            else {
+                questionsScreen.setAttribute("class", "hide");
+                endScreen.setAttribute("class", "start");
+            }
         });
-
-        /* IGNORE
-
-        loop through the choices array
-        for (let k = 0; k < obj.choices.length; k++) {
-
-            // create a new list of buttons and append each element from choices array
-            // let choicesList = document.createElement("button");
-            // questionChoices.appendChild(choicesList);
-
-            // // add buttons based on current question
-            // choicesList.textContent = currentQuestionsItem.choices[k];
-        }
-
-        IGNORE */
     }
-
-
 }

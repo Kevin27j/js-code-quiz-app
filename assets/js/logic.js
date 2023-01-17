@@ -48,9 +48,6 @@ function countDown(){
     
 }
 
-
-
-
 // WHEN FIRST QUESTION IS ANSWERED I AM PRESENTED WITH ANOTHER QUESTION
 // IF QUESTION IS NOT CORRECT
 // *AMOUNT* OF TIME IS SUBTRACTED FROM TIMER
@@ -60,7 +57,5 @@ function countDown(){
 
 // WHEN THE GAME IS OVER
 // I CAN SAVE MY NAME AND THE SCORE
-
-
 
 startBtn.addEventListener("click", startGame);
