@@ -23,7 +23,10 @@ function startGame() {
     questionsScreen.setAttribute("class", "start");
 
     // start Count Down
-    countDown();
+    timeInterval = setInterval(function () {
+        timeLeft--;
+        timer.textContent = timeLeft;
+    }, 1000);
     renderQuestions();
 
     // If question is correct
@@ -36,17 +39,7 @@ function startGame() {
 
 // START the timer
 // function to keep track of timer
-function countDown(){
-    let timeInterval = setInterval(function () {
-        timeLeft--;
-        timer.textContent = timeLeft;
-    
-        if (timeLeft === 0){
-            clearInterval(timeInterval);
-        }
-    }, 1000)
-    
-}
+    let timeInterval;
 
 // WHEN FIRST QUESTION IS ANSWERED I AM PRESENTED WITH ANOTHER QUESTION
 // IF QUESTION IS NOT CORRECT

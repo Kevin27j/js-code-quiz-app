@@ -65,12 +65,21 @@ function renderQuestions() {
             if (myQuestionsIndex < myQuestions.length - 1) {
                 myQuestionsIndex++;
                 renderQuestions();
-            }
-            // if no more questions hide question screen div and show end-screen div
-            else {
-                questionsScreen.setAttribute("class", "hide");
-                endScreen.setAttribute("class", "start");
+            } else {
+                endQuiz();
             }
         });
     }
+}
+
+// declare function to end quiz when 
+// end of quiz has been reached 
+// or when timeLeft is up
+function endQuiz() {
+    if (myQuestionsIndex === myQuestions.length - 1 || timeLeft === 0) {
+        clearInterval(timeInterval);
+    }
+
+    questionsScreen.setAttribute("class", "hide");
+    endScreen.setAttribute("class", "start");
 }
