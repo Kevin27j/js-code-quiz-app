@@ -2,11 +2,13 @@
 
 ## Table of contents
 
-- [Description](#description)
-- [Screenshot](#screenshot)
-- [Links](#links)
-- [Built with](#built-with)
-- [Author](#author)
+- [js-code-quiz-app](#js-code-quiz-app)
+  - [Table of contents](#table-of-contents)
+  - [Description](#description)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Built with](#built-with)
+  - [Author](#author)
 
 ## Description
 
@@ -14,7 +16,7 @@ Coding Quiz App build with JavaScript
 
 ## Screenshot
 
-![Layout](/screenshots/Screenshot%202023-01-18%20at%2011.10.55.png)
+![Layout](/assets/screenshots/Screenshot%202023-01-18%20at%2011.10.55.png)
 
 ## Links
 

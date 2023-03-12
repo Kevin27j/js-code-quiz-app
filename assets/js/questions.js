@@ -54,11 +54,11 @@ function renderQuestions() {
             }
             // if btn is not equal to answer
             else {
+                // decrement time -15
+                timeLeft -= 15;
                 // return wrong msg
                 feedbackMsg.setAttribute("class", "feedback");
                 feedbackMsg.textContent = "Wrong!";
-                // decrement time -15
-                timeLeft -= 15;
             }
 
             // go to next question when after button choice is clicked
@@ -80,6 +80,12 @@ function endQuiz() {
         clearInterval(timeInterval);
     }
 
+    // show final score (time left)
+    timer.textContent = timeLeft
+    finalScore.textContent = timeLeft;
+
+    // hide question-screen div 
     questionsScreen.setAttribute("class", "hide");
+    // and show end-screen div
     endScreen.setAttribute("class", "start");
 }
