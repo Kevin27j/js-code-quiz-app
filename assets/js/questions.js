@@ -1,19 +1,24 @@
 // declare variable for an array of objects holding all questions, choices and answers for your quiz
 let myQuestions = [
     {
-        question: "What color?",
-        choices: ["red", "blue", "green"],
-        answer: "red"
+        question: 'How do you write "Hello World" in an alert box?',
+        choices: ['alertBox("Hello World")', 'alert("Hello World")', 'modal("Hello World")'],
+        answer: 'alert("Hello World")'
     },
     {
-        question: "What number?",
-        choices: ["one", "two", "three"],
-        answer: "two"
+        question: 'Which one of the following is correct?',
+        choices: ['i =+ 1', 'i = i++1', 'i += 1'],
+        answer: 'i += 1'
     },
     {
-        question: "Lorem ipsum?",
-        choices: ["lorem", "ipsum", "planner"],
-        answer: "lorem"
+        question: 'Which array method sorts the elements of an array?',
+        choices: ['sort()', 'order()', 'changeOrder(order)'],
+        answer: 'sort()'
+    },
+    {
+        question: 'How do you get the DOM element with id in JavaScript?',
+        choices: ['window.getElementById(...)', 'page.getElementById(...)', 'document.getElementById(...)'],
+        answer: 'document.getElementById(...)'
     }
 
 ];
