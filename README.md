@@ -17,6 +17,7 @@ Coding Quiz App build with JavaScript
 ## Screenshot
 
 ![Layout](/assets/screenshots/Screenshot%202023-01-18%20at%2011.10.55.png)
+![Layout](/assets/screenshots/Screenshot%202023-03-13%20at%2015.22.27.png)
 
 ## Links
 

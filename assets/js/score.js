@@ -1,6 +1,7 @@
 // SCORE PAGE
 let scoreList = document.querySelector("#highscores");
 let clearList = document.querySelector("#clear");
+// console.log(clearList);
 
 function printScore() {
     // Get highscores from localStorage
@@ -16,7 +17,11 @@ function printScore() {
     }
 }
 
-// function to clear highscore
+// function to clear highscore on click clear button
+clearList.addEventListener("click", function(){
+    localStorage.clear();
+    scoreList.remove();
+})
 
-printScore()
+printScore() 
 
